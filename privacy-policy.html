@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy for Bogus</title>
+<style>
+  :root {
+    --text: #1f2328;
+    --muted: #57606a;
+    --bg: #ffffff;
+    --code-bg: #f6f8fa;
+    --border: #d0d7de;
+    --link: #0969da;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e6edf3;
+      --muted: #9198a1;
+      --bg: #0d1117;
+      --code-bg: #161b22;
+      --border: #30363d;
+      --link: #58a6ff;
+    }
+  }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    padding: 0 16px;
+  }
+  .container {
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 40px 32px;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  h2 {
+    font-size: 1.4em;
+    margin: 32px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 1.15em;
+    margin: 22px 0 8px;
+  }
+  p, li { margin: 10px 0; }
+  strong { color: var(--text); }
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+  ul, ol {
+    padding-left: 1.6em;
+    margin: 12px 0;
+  }
+  li { margin: 6px 0; }
+  code {
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    word-break: break-all;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 0.95em;
+    margin-bottom: 24px;
+  }
+  .intro {
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0 8px;
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    <h1>Privacy Policy for Bogus</h1>
+    <p class="updated"><strong>Last Updated: July 24, 2026</strong></p>
+
+    <p class="intro">Bogus keeps most of your data on your device. Two things leave your browser: (1) the <strong>product title</strong> from the shopping page you're viewing is sent to our backend to find matching products on Amazon and AliExpress, and (2) a single one-time "install" signal is sent to our ad-measurement provider (Meta) when you first install the extension. No browsing history, searches, or personal information are ever sent.</p>
+
+    <h2>Scope of the reliability check</h2>
+    <p>Bogus's "less reliable store" check and banner are designed <strong>only for e-commerce product stores</strong> — websites that sell physical or digital goods as purchasable products (for example, independent shops built on Shopify, WooCommerce, or similar storefronts).</p>
+    <p>It is <strong>not</strong> designed for, and may be inaccurate on, websites whose main purpose is something other than selling products, including:</p>
+    <ul>
+      <li>Membership websites and loyalty programs</li>
+      <li>Subscription services and recurring-billing platforms</li>
+      <li>Software-as-a-Service (SaaS), digital-service, and AI-tool websites</li>
+      <li>Online courses, learning platforms, and education sites (e.g. Skillshare-style sites)</li>
+      <li>Content, media, news, social, and search sites</li>
+    </ul>
+    <p>The check looks for patterns (such as subscription, membership, or pricing language) that also appear on perfectly legitimate membership, subscription, and digital-service sites. <strong>An alert on such a site does not mean the site is unreliable</strong> — it means the check is being used on a type of website it was not built for. If you see an alert on a membership, subscription, SaaS, course, or other non-e-commerce site, please disregard it.</p>
+    <p>The alert is an automated, heuristic estimate and is not definitive. It describes shopping-page patterns it observes; it never asserts that a site is fraudulent, and it is not a statement about any specific website's legitimacy.</p>
+
+    <h2>What Data We Collect</h2>
+    <p>The Bogus extension does <strong>not</strong> collect, store, or transmit any personally identifiable information (PII) about you or your browsing.</p>
+
+    <h3>What the extension does:</h3>
+    <ol>
+      <li><strong>Product Detection &amp; Matching</strong>: Bogus reads the current shopping page locally to run its reliability check and to grab the product title. When you open the popup / compare, that title is sent to our backend (<code>https://amez.live/bogus</code>) to look up matching products on Amazon and AliExpress. If you explicitly choose to "search by image", the image URL is also sent for that one search. This data is used only to find matches and is not stored beyond the request.</li>
+      <li><strong>Search Queries</strong>: If you use the manual search bar, your search query is used to build Amazon and AliExpress search URLs that open in a new tab. Queries are not logged or stored.</li>
+      <li><strong>Affiliate Tags</strong>: When you click a search result link, an affiliate tag is appended to the URL. The tag identifies the extension as the referral source — it does not identify you personally.</li>
+      <li><strong>Backend Communication</strong>: The extension talks to our backend at <code>https://amez.live/bogus</code> over encrypted HTTPS to find matching products and to fetch/rotate affiliate tags. The only page content sent is the detected product title (and an image URL only when you search by image). A randomly-generated session token identifies your session for tag rotation — it is not linked to your name, email, or any personal identity.</li>
+      <li><strong>One-time install signal (Meta Pixel)</strong>: On first install only, Bogus opens a one-time welcome page that loads the Meta (Facebook) Pixel and reports a single <strong>PageView</strong> and <strong>Purchase</strong> event to Meta, so we can measure installs from our ads. This request transmits to Meta: your IP address, browser type / user agent, and a cookie or local-storage identifier set by Meta. <strong>No browsing history, page content, search queries, or product data are sent to Meta — only that single install signal.</strong> After that one-time event, the extension does not contact Meta again. You can disable this by blocking third-party cookies / tracking protection in your browser, or by uninstalling.</li>
+    </ol>
+
+    <h2>What We Do NOT Collect</h2>
+    <ul>
+      <li>No browsing history — Bogus reads only the current page (locally, for its reliability check and to detect the product title); it never reads your other tabs, browsing history, or other sites</li>
+      <li>No purchase history</li>
+      <li>No email addresses</li>
+      <li>No passwords</li>
+      <li>No credit card information</li>
+      <li>No form data from any website</li>
+      <li>No data from the mainstream shopping sites (Amazon, AliExpress, eBay, Walmart, etc.)</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <ul>
+      <li><strong>Meta (Facebook) Pixel</strong> — receives the one-time install signal described above. See <a href="https://www.facebook.com/privacy/policy/">Meta's Privacy Policy</a>.</li>
+      <li><strong>Amazon and AliExpress</strong> — the extension may redirect you to these platforms via affiliate links. These platforms have their own privacy policies that govern your interactions on their sites.</li>
+    </ul>
+
+    <h2>Data Storage</h2>
+    <p>All extension settings and cached affiliate tags are stored locally in your browser using Chrome's <code>storage.local</code> API. As described above, the only data sent off-device is the detected product title (and image on image search) to our backend, plus the one-time Meta install signal.</p>
+
+    <h2>Contact</h2>
+    <p>For questions about this privacy policy, contact us at <strong>Muhammad@localpulse.cc</strong>.</p>
+    <p>This policy is published at: <a href="https://azbog.gitlab.io/Privacy">https://azbog.gitlab.io/Privacy</a></p>
+
+    <h2>Changes</h2>
+    <p>We may update this privacy policy from time to time. Changes will be posted on this page.</p>
+  </main>
+</body>
+</html>
